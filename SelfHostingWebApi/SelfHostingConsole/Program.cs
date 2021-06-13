@@ -21,11 +21,14 @@ namespace SelfHostingConsole
             {
                 //Setting Formatters
                 var formatters = server.Configuration.Formatters;
-                //formatters.Add(formatters.JsonFormatter);
-                //formatters.Remove(formatters.XmlFormatter);
 
+                // Return Json Data
+                formatters.Add(formatters.JsonFormatter);
+                formatters.Remove(formatters.XmlFormatter);
+
+                // Return XML Data
                 //formatters.Remove(formatters.JsonFormatter);
-                formatters.Add(formatters.XmlFormatter);
+                //formatters.Add(formatters.XmlFormatter);
 
                 server.OpenAsync().Wait();
                 Console.WriteLine("Api application is  Up and Running at http://localhost:8080");
